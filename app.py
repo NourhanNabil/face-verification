@@ -101,7 +101,7 @@ async def predict_images(images: List[ImageInput]):
     image2 = np.expand_dims(image2, axis=0)
 
     score = predict(image1, image2)
-    
+    print(score)
     match = score > 0.5
     
     return {"score": round(score,2), "match": match}

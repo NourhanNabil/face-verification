@@ -6,7 +6,6 @@ This project implements a face verification system using Siamese Networks with T
 The architecture of the system involves:
 - Siamese Neural Network with VGG16 base model for feature extraction.
 - Conversion of the trained model to ONNX format.
-- Optimization and deployment using TensorRT (TRT).
 - Exposing an API for inference using FastAPI.
 
 
@@ -21,8 +20,8 @@ cd face-verification
 
 ## Docker
 1. Build the Docker image:
-```
-bash docker build -t face-verification  
+```bash
+docker build -t face-verification .
 ```
 
 2. Run the Docker container:
@@ -35,7 +34,8 @@ docker run -d -p 8000:8000 face-verification
 - **Method**: POST
 - **Request Body**: JSON containing paths to two images to be verified, where each image should be URL.
 - **Paylod Example**: 
-``` bash[
+``` bash
+   [
      { "image": "url_to_image1"},
      { "image": "url_to_image2"}
     ]
